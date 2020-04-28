@@ -11,8 +11,8 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 
-import io.confluent.cloud.demo.domain.SensorDataImpl.SensorData;
 import io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer;
+import io.confluent.cloud.demo.domain.SensorDataImpl.SensorData;
 
 import static io.confluent.cloud.demo.utils.KafkaUtils.TOPIC;
 import static io.confluent.cloud.demo.utils.KafkaUtils.createTopic;

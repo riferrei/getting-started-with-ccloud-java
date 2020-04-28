@@ -10,8 +10,9 @@ import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
-import io.confluent.cloud.demo.domain.SensorDataImpl.SensorData;
 import io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer;
+import io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializerConfig;
+import io.confluent.cloud.demo.domain.SensorDataImpl.SensorData;
 
 import static io.confluent.cloud.demo.utils.KafkaUtils.TOPIC;
 import static io.confluent.cloud.demo.utils.KafkaUtils.createTopic;
@@ -29,7 +30,8 @@ public class ConsumerApp {
 
         // Instructs the deserializer to perform deserialization using the
         // specific value type instead of using the 'DynamicMessage' type.
-        configs.setProperty("specific.protobuf.value.type", SensorData.class.getName());
+        configs.setProperty(KafkaProtobufDeserializerConfig.SPECIFIC_PROTOBUF_VALUE_TYPE,
+            SensorData.class.getName());
 
         // Set other standard properties for the Kafka consumer
         configs.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
