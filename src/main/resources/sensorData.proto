@@ -2,12 +2,19 @@ syntax = "proto3";
 
 package io.confluent.cloud.demo.domain;
 
-option java_outer_classname = "SensorDataImpl";
+option java_outer_classname = "SensorReadingImpl";
 
-message SensorData {
+message Device {
 
     string deviceID = 1;
     bool enabled = 2;
+
+}
+
+message SensorReading {
+
+    Device device = 1;
+    int64 dateTime = 2;
     double reading = 3;
 
 }

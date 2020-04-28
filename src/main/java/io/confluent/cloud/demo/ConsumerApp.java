@@ -12,7 +12,8 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 
 import io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer;
 import io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializerConfig;
-import io.confluent.cloud.demo.domain.SensorDataImpl.SensorData;
+import io.confluent.cloud.demo.domain.SensorReadingImpl.Device;
+import io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading;
 
 import static io.confluent.cloud.demo.utils.KafkaUtils.TOPIC;
 import static io.confluent.cloud.demo.utils.KafkaUtils.createTopic;
@@ -31,27 +32,29 @@ public class ConsumerApp {
         // Instructs the deserializer to perform deserialization using the
         // specific value type instead of using the 'DynamicMessage' type.
         configs.setProperty(KafkaProtobufDeserializerConfig.SPECIFIC_PROTOBUF_VALUE_TYPE,
-            SensorData.class.getName());
+            SensorReading.class.getName());
 
         // Set other standard properties for the Kafka consumer
         configs.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         configs.setProperty(ConsumerConfig.GROUP_ID_CONFIG, ConsumerApp.class.getName());
 
-        try (KafkaConsumer<String, SensorData> consumer = new KafkaConsumer<>(configs)) {
+        try (KafkaConsumer<String, SensorReading> consumer = new KafkaConsumer<>(configs)) {
 
             consumer.subscribe(Arrays.asList(TOPIC));
 
             for (;;) {
 
-                ConsumerRecords<String, SensorData> records =
+                ConsumerRecords<String, SensorReading> records =
                     consumer.poll(Duration.ofSeconds(Integer.MAX_VALUE));
 
-                for (ConsumerRecord<String, SensorData> record : records) {
-                    SensorData sensorData = record.value();
+                for (ConsumerRecord<String, SensorReading> record : records) {
+                    SensorReading sensorReading = record.value();
+                    Device device = sensorReading.getDevice();
                     StringBuilder sb = new StringBuilder();
-                    sb.append("deviceID.....: ").append(sensorData.getDeviceID()).append("\n");
-                    sb.append("enabled......: ").append(sensorData.getEnabled()).append("\n");
-                    sb.append("reading......: ").append(sensorData.getReading()).append("\n");
+                    sb.append("deviceID.....: ").append(device.getDeviceID()).append("\n");
+                    sb.append("enabled......: ").append(device.getEnabled()).append("\n");
+                    sb.append("dateTime.....: ").append(sensorReading.getDateTime()).append("\n");
+                    sb.append("reading......: ").append(sensorReading.getReading()).append("\n");
                     System.out.println(sb.toString());
                 }
 
