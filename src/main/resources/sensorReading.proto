@@ -4,14 +4,12 @@ package io.confluent.cloud.demo.domain;
 
 option java_outer_classname = "SensorReadingImpl";
 
-message Device {
-
-    string deviceID = 1;
-    bool enabled = 2;
-
-}
-
 message SensorReading {
+
+    message Device {
+        string deviceID = 1;
+        bool enabled = 2;
+    }
 
     Device device = 1;
     int64 dateTime = 2;

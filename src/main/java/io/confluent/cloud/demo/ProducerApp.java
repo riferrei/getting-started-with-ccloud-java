@@ -12,9 +12,9 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 
-import io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer;
-import io.confluent.cloud.demo.domain.SensorReadingImpl.Device;
 import io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading;
+import io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device;
+import io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer;
 
 import static io.confluent.cloud.demo.utils.KafkaUtils.TOPIC;
 import static io.confluent.cloud.demo.utils.KafkaUtils.createTopic;

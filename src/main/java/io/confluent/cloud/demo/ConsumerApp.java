@@ -10,10 +10,10 @@ import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
+import io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading;
+import io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device;
 import io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer;
 import io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializerConfig;
-import io.confluent.cloud.demo.domain.SensorReadingImpl.Device;
-import io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading;
 
 import static io.confluent.cloud.demo.utils.KafkaUtils.TOPIC;
 import static io.confluent.cloud.demo.utils.KafkaUtils.createTopic;

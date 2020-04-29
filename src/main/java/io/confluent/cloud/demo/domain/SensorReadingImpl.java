@@ -14,659 +14,24 @@ public final class SensorReadingImpl {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface DeviceOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:io.confluent.cloud.demo.domain.Device)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string deviceID = 1;</code>
-     * @return The deviceID.
-     */
-    java.lang.String getDeviceID();
-    /**
-     * <code>string deviceID = 1;</code>
-     * @return The bytes for deviceID.
-     */
-    com.google.protobuf.ByteString
-        getDeviceIDBytes();
-
-    /**
-     * <code>bool enabled = 2;</code>
-     * @return The enabled.
-     */
-    boolean getEnabled();
-  }
-  /**
-   * Protobuf type {@code io.confluent.cloud.demo.domain.Device}
-   */
-  public  static final class Device extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:io.confluent.cloud.demo.domain.Device)
-      DeviceOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Device.newBuilder() to construct.
-    private Device(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Device() {
-      deviceID_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Device();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Device(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              deviceID_ = s;
-              break;
-            }
-            case 16: {
-
-              enabled_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.confluent.cloud.demo.domain.SensorReadingImpl.internal_static_io_confluent_cloud_demo_domain_Device_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return io.confluent.cloud.demo.domain.SensorReadingImpl.internal_static_io_confluent_cloud_demo_domain_Device_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              io.confluent.cloud.demo.domain.SensorReadingImpl.Device.class, io.confluent.cloud.demo.domain.SensorReadingImpl.Device.Builder.class);
-    }
-
-    public static final int DEVICEID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object deviceID_;
-    /**
-     * <code>string deviceID = 1;</code>
-     * @return The deviceID.
-     */
-    public java.lang.String getDeviceID() {
-      java.lang.Object ref = deviceID_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        deviceID_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string deviceID = 1;</code>
-     * @return The bytes for deviceID.
-     */
-    public com.google.protobuf.ByteString
-        getDeviceIDBytes() {
-      java.lang.Object ref = deviceID_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        deviceID_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ENABLED_FIELD_NUMBER = 2;
-    private boolean enabled_;
-    /**
-     * <code>bool enabled = 2;</code>
-     * @return The enabled.
-     */
-    public boolean getEnabled() {
-      return enabled_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getDeviceIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, deviceID_);
-      }
-      if (enabled_ != false) {
-        output.writeBool(2, enabled_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getDeviceIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, deviceID_);
-      }
-      if (enabled_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, enabled_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof io.confluent.cloud.demo.domain.SensorReadingImpl.Device)) {
-        return super.equals(obj);
-      }
-      io.confluent.cloud.demo.domain.SensorReadingImpl.Device other = (io.confluent.cloud.demo.domain.SensorReadingImpl.Device) obj;
-
-      if (!getDeviceID()
-          .equals(other.getDeviceID())) return false;
-      if (getEnabled()
-          != other.getEnabled()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
-      hash = (53 * hash) + getDeviceID().hashCode();
-      hash = (37 * hash) + ENABLED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getEnabled());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static io.confluent.cloud.demo.domain.SensorReadingImpl.Device parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.confluent.cloud.demo.domain.SensorReadingImpl.Device parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.confluent.cloud.demo.domain.SensorReadingImpl.Device parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.confluent.cloud.demo.domain.SensorReadingImpl.Device parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.confluent.cloud.demo.domain.SensorReadingImpl.Device parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.confluent.cloud.demo.domain.SensorReadingImpl.Device parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.confluent.cloud.demo.domain.SensorReadingImpl.Device parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.confluent.cloud.demo.domain.SensorReadingImpl.Device parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.confluent.cloud.demo.domain.SensorReadingImpl.Device parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static io.confluent.cloud.demo.domain.SensorReadingImpl.Device parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.confluent.cloud.demo.domain.SensorReadingImpl.Device parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.confluent.cloud.demo.domain.SensorReadingImpl.Device parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(io.confluent.cloud.demo.domain.SensorReadingImpl.Device prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code io.confluent.cloud.demo.domain.Device}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:io.confluent.cloud.demo.domain.Device)
-        io.confluent.cloud.demo.domain.SensorReadingImpl.DeviceOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.confluent.cloud.demo.domain.SensorReadingImpl.internal_static_io_confluent_cloud_demo_domain_Device_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return io.confluent.cloud.demo.domain.SensorReadingImpl.internal_static_io_confluent_cloud_demo_domain_Device_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                io.confluent.cloud.demo.domain.SensorReadingImpl.Device.class, io.confluent.cloud.demo.domain.SensorReadingImpl.Device.Builder.class);
-      }
-
-      // Construct using io.confluent.cloud.demo.domain.SensorReadingImpl.Device.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        deviceID_ = "";
-
-        enabled_ = false;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.confluent.cloud.demo.domain.SensorReadingImpl.internal_static_io_confluent_cloud_demo_domain_Device_descriptor;
-      }
-
-      @java.lang.Override
-      public io.confluent.cloud.demo.domain.SensorReadingImpl.Device getDefaultInstanceForType() {
-        return io.confluent.cloud.demo.domain.SensorReadingImpl.Device.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public io.confluent.cloud.demo.domain.SensorReadingImpl.Device build() {
-        io.confluent.cloud.demo.domain.SensorReadingImpl.Device result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public io.confluent.cloud.demo.domain.SensorReadingImpl.Device buildPartial() {
-        io.confluent.cloud.demo.domain.SensorReadingImpl.Device result = new io.confluent.cloud.demo.domain.SensorReadingImpl.Device(this);
-        result.deviceID_ = deviceID_;
-        result.enabled_ = enabled_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.confluent.cloud.demo.domain.SensorReadingImpl.Device) {
-          return mergeFrom((io.confluent.cloud.demo.domain.SensorReadingImpl.Device)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(io.confluent.cloud.demo.domain.SensorReadingImpl.Device other) {
-        if (other == io.confluent.cloud.demo.domain.SensorReadingImpl.Device.getDefaultInstance()) return this;
-        if (!other.getDeviceID().isEmpty()) {
-          deviceID_ = other.deviceID_;
-          onChanged();
-        }
-        if (other.getEnabled() != false) {
-          setEnabled(other.getEnabled());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        io.confluent.cloud.demo.domain.SensorReadingImpl.Device parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.confluent.cloud.demo.domain.SensorReadingImpl.Device) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object deviceID_ = "";
-      /**
-       * <code>string deviceID = 1;</code>
-       * @return The deviceID.
-       */
-      public java.lang.String getDeviceID() {
-        java.lang.Object ref = deviceID_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          deviceID_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string deviceID = 1;</code>
-       * @return The bytes for deviceID.
-       */
-      public com.google.protobuf.ByteString
-          getDeviceIDBytes() {
-        java.lang.Object ref = deviceID_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          deviceID_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string deviceID = 1;</code>
-       * @param value The deviceID to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDeviceID(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        deviceID_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string deviceID = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDeviceID() {
-        
-        deviceID_ = getDefaultInstance().getDeviceID();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string deviceID = 1;</code>
-       * @param value The bytes for deviceID to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDeviceIDBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        deviceID_ = value;
-        onChanged();
-        return this;
-      }
-
-      private boolean enabled_ ;
-      /**
-       * <code>bool enabled = 2;</code>
-       * @return The enabled.
-       */
-      public boolean getEnabled() {
-        return enabled_;
-      }
-      /**
-       * <code>bool enabled = 2;</code>
-       * @param value The enabled to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnabled(boolean value) {
-        
-        enabled_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool enabled = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnabled() {
-        
-        enabled_ = false;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:io.confluent.cloud.demo.domain.Device)
-    }
-
-    // @@protoc_insertion_point(class_scope:io.confluent.cloud.demo.domain.Device)
-    private static final io.confluent.cloud.demo.domain.SensorReadingImpl.Device DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new io.confluent.cloud.demo.domain.SensorReadingImpl.Device();
-    }
-
-    public static io.confluent.cloud.demo.domain.SensorReadingImpl.Device getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Device>
-        PARSER = new com.google.protobuf.AbstractParser<Device>() {
-      @java.lang.Override
-      public Device parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Device(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Device> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Device> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public io.confluent.cloud.demo.domain.SensorReadingImpl.Device getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface SensorReadingOrBuilder extends
       // @@protoc_insertion_point(interface_extends:io.confluent.cloud.demo.domain.SensorReading)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.io.confluent.cloud.demo.domain.Device device = 1;</code>
+     * <code>.io.confluent.cloud.demo.domain.SensorReading.Device device = 1;</code>
      * @return Whether the device field is set.
      */
     boolean hasDevice();
     /**
-     * <code>.io.confluent.cloud.demo.domain.Device device = 1;</code>
+     * <code>.io.confluent.cloud.demo.domain.SensorReading.Device device = 1;</code>
      * @return The device.
      */
-    io.confluent.cloud.demo.domain.SensorReadingImpl.Device getDevice();
+    io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device getDevice();
     /**
-     * <code>.io.confluent.cloud.demo.domain.Device device = 1;</code>
+     * <code>.io.confluent.cloud.demo.domain.SensorReading.Device device = 1;</code>
      */
-    io.confluent.cloud.demo.domain.SensorReadingImpl.DeviceOrBuilder getDeviceOrBuilder();
+    io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.DeviceOrBuilder getDeviceOrBuilder();
 
     /**
      * <code>int64 dateTime = 2;</code>
@@ -726,11 +91,11 @@ public final class SensorReadingImpl {
               done = true;
               break;
             case 10: {
-              io.confluent.cloud.demo.domain.SensorReadingImpl.Device.Builder subBuilder = null;
+              io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device.Builder subBuilder = null;
               if (device_ != null) {
                 subBuilder = device_.toBuilder();
               }
-              device_ = input.readMessage(io.confluent.cloud.demo.domain.SensorReadingImpl.Device.parser(), extensionRegistry);
+              device_ = input.readMessage(io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(device_);
                 device_ = subBuilder.buildPartial();
@@ -780,26 +145,661 @@ public final class SensorReadingImpl {
               io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.class, io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Builder.class);
     }
 
-    public static final int DEVICE_FIELD_NUMBER = 1;
-    private io.confluent.cloud.demo.domain.SensorReadingImpl.Device device_;
+    public interface DeviceOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:io.confluent.cloud.demo.domain.SensorReading.Device)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>string deviceID = 1;</code>
+       * @return The deviceID.
+       */
+      java.lang.String getDeviceID();
+      /**
+       * <code>string deviceID = 1;</code>
+       * @return The bytes for deviceID.
+       */
+      com.google.protobuf.ByteString
+          getDeviceIDBytes();
+
+      /**
+       * <code>bool enabled = 2;</code>
+       * @return The enabled.
+       */
+      boolean getEnabled();
+    }
     /**
-     * <code>.io.confluent.cloud.demo.domain.Device device = 1;</code>
+     * Protobuf type {@code io.confluent.cloud.demo.domain.SensorReading.Device}
+     */
+    public  static final class Device extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:io.confluent.cloud.demo.domain.SensorReading.Device)
+        DeviceOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Device.newBuilder() to construct.
+      private Device(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Device() {
+        deviceID_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Device();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Device(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                deviceID_ = s;
+                break;
+              }
+              case 16: {
+
+                enabled_ = input.readBool();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.confluent.cloud.demo.domain.SensorReadingImpl.internal_static_io_confluent_cloud_demo_domain_SensorReading_Device_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.confluent.cloud.demo.domain.SensorReadingImpl.internal_static_io_confluent_cloud_demo_domain_SensorReading_Device_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device.class, io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device.Builder.class);
+      }
+
+      public static final int DEVICEID_FIELD_NUMBER = 1;
+      private volatile java.lang.Object deviceID_;
+      /**
+       * <code>string deviceID = 1;</code>
+       * @return The deviceID.
+       */
+      public java.lang.String getDeviceID() {
+        java.lang.Object ref = deviceID_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deviceID_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string deviceID = 1;</code>
+       * @return The bytes for deviceID.
+       */
+      public com.google.protobuf.ByteString
+          getDeviceIDBytes() {
+        java.lang.Object ref = deviceID_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deviceID_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ENABLED_FIELD_NUMBER = 2;
+      private boolean enabled_;
+      /**
+       * <code>bool enabled = 2;</code>
+       * @return The enabled.
+       */
+      public boolean getEnabled() {
+        return enabled_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!getDeviceIDBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, deviceID_);
+        }
+        if (enabled_ != false) {
+          output.writeBool(2, enabled_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getDeviceIDBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, deviceID_);
+        }
+        if (enabled_ != false) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(2, enabled_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device)) {
+          return super.equals(obj);
+        }
+        io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device other = (io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device) obj;
+
+        if (!getDeviceID()
+            .equals(other.getDeviceID())) return false;
+        if (getEnabled()
+            != other.getEnabled()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
+        hash = (53 * hash) + getDeviceID().hashCode();
+        hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getEnabled());
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code io.confluent.cloud.demo.domain.SensorReading.Device}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:io.confluent.cloud.demo.domain.SensorReading.Device)
+          io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.DeviceOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return io.confluent.cloud.demo.domain.SensorReadingImpl.internal_static_io_confluent_cloud_demo_domain_SensorReading_Device_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return io.confluent.cloud.demo.domain.SensorReadingImpl.internal_static_io_confluent_cloud_demo_domain_SensorReading_Device_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device.class, io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device.Builder.class);
+        }
+
+        // Construct using io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          deviceID_ = "";
+
+          enabled_ = false;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return io.confluent.cloud.demo.domain.SensorReadingImpl.internal_static_io_confluent_cloud_demo_domain_SensorReading_Device_descriptor;
+        }
+
+        @java.lang.Override
+        public io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device getDefaultInstanceForType() {
+          return io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device build() {
+          io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device buildPartial() {
+          io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device result = new io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device(this);
+          result.deviceID_ = deviceID_;
+          result.enabled_ = enabled_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device) {
+            return mergeFrom((io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device other) {
+          if (other == io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device.getDefaultInstance()) return this;
+          if (!other.getDeviceID().isEmpty()) {
+            deviceID_ = other.deviceID_;
+            onChanged();
+          }
+          if (other.getEnabled() != false) {
+            setEnabled(other.getEnabled());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object deviceID_ = "";
+        /**
+         * <code>string deviceID = 1;</code>
+         * @return The deviceID.
+         */
+        public java.lang.String getDeviceID() {
+          java.lang.Object ref = deviceID_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            deviceID_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string deviceID = 1;</code>
+         * @return The bytes for deviceID.
+         */
+        public com.google.protobuf.ByteString
+            getDeviceIDBytes() {
+          java.lang.Object ref = deviceID_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            deviceID_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string deviceID = 1;</code>
+         * @param value The deviceID to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDeviceID(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          deviceID_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string deviceID = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearDeviceID() {
+          
+          deviceID_ = getDefaultInstance().getDeviceID();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string deviceID = 1;</code>
+         * @param value The bytes for deviceID to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDeviceIDBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          deviceID_ = value;
+          onChanged();
+          return this;
+        }
+
+        private boolean enabled_ ;
+        /**
+         * <code>bool enabled = 2;</code>
+         * @return The enabled.
+         */
+        public boolean getEnabled() {
+          return enabled_;
+        }
+        /**
+         * <code>bool enabled = 2;</code>
+         * @param value The enabled to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEnabled(boolean value) {
+          
+          enabled_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>bool enabled = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearEnabled() {
+          
+          enabled_ = false;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:io.confluent.cloud.demo.domain.SensorReading.Device)
+      }
+
+      // @@protoc_insertion_point(class_scope:io.confluent.cloud.demo.domain.SensorReading.Device)
+      private static final io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device();
+      }
+
+      public static io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Device>
+          PARSER = new com.google.protobuf.AbstractParser<Device>() {
+        @java.lang.Override
+        public Device parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Device(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Device> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Device> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public static final int DEVICE_FIELD_NUMBER = 1;
+    private io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device device_;
+    /**
+     * <code>.io.confluent.cloud.demo.domain.SensorReading.Device device = 1;</code>
      * @return Whether the device field is set.
      */
     public boolean hasDevice() {
       return device_ != null;
     }
     /**
-     * <code>.io.confluent.cloud.demo.domain.Device device = 1;</code>
+     * <code>.io.confluent.cloud.demo.domain.SensorReading.Device device = 1;</code>
      * @return The device.
      */
-    public io.confluent.cloud.demo.domain.SensorReadingImpl.Device getDevice() {
-      return device_ == null ? io.confluent.cloud.demo.domain.SensorReadingImpl.Device.getDefaultInstance() : device_;
+    public io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device getDevice() {
+      return device_ == null ? io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device.getDefaultInstance() : device_;
     }
     /**
-     * <code>.io.confluent.cloud.demo.domain.Device device = 1;</code>
+     * <code>.io.confluent.cloud.demo.domain.SensorReading.Device device = 1;</code>
      */
-    public io.confluent.cloud.demo.domain.SensorReadingImpl.DeviceOrBuilder getDeviceOrBuilder() {
+    public io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.DeviceOrBuilder getDeviceOrBuilder() {
       return getDevice();
     }
 
@@ -1175,31 +1175,31 @@ public final class SensorReadingImpl {
         return this;
       }
 
-      private io.confluent.cloud.demo.domain.SensorReadingImpl.Device device_;
+      private io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device device_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.confluent.cloud.demo.domain.SensorReadingImpl.Device, io.confluent.cloud.demo.domain.SensorReadingImpl.Device.Builder, io.confluent.cloud.demo.domain.SensorReadingImpl.DeviceOrBuilder> deviceBuilder_;
+          io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device, io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device.Builder, io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.DeviceOrBuilder> deviceBuilder_;
       /**
-       * <code>.io.confluent.cloud.demo.domain.Device device = 1;</code>
+       * <code>.io.confluent.cloud.demo.domain.SensorReading.Device device = 1;</code>
        * @return Whether the device field is set.
        */
       public boolean hasDevice() {
         return deviceBuilder_ != null || device_ != null;
       }
       /**
-       * <code>.io.confluent.cloud.demo.domain.Device device = 1;</code>
+       * <code>.io.confluent.cloud.demo.domain.SensorReading.Device device = 1;</code>
        * @return The device.
        */
-      public io.confluent.cloud.demo.domain.SensorReadingImpl.Device getDevice() {
+      public io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device getDevice() {
         if (deviceBuilder_ == null) {
-          return device_ == null ? io.confluent.cloud.demo.domain.SensorReadingImpl.Device.getDefaultInstance() : device_;
+          return device_ == null ? io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device.getDefaultInstance() : device_;
         } else {
           return deviceBuilder_.getMessage();
         }
       }
       /**
-       * <code>.io.confluent.cloud.demo.domain.Device device = 1;</code>
+       * <code>.io.confluent.cloud.demo.domain.SensorReading.Device device = 1;</code>
        */
-      public Builder setDevice(io.confluent.cloud.demo.domain.SensorReadingImpl.Device value) {
+      public Builder setDevice(io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device value) {
         if (deviceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1213,10 +1213,10 @@ public final class SensorReadingImpl {
         return this;
       }
       /**
-       * <code>.io.confluent.cloud.demo.domain.Device device = 1;</code>
+       * <code>.io.confluent.cloud.demo.domain.SensorReading.Device device = 1;</code>
        */
       public Builder setDevice(
-          io.confluent.cloud.demo.domain.SensorReadingImpl.Device.Builder builderForValue) {
+          io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device.Builder builderForValue) {
         if (deviceBuilder_ == null) {
           device_ = builderForValue.build();
           onChanged();
@@ -1227,13 +1227,13 @@ public final class SensorReadingImpl {
         return this;
       }
       /**
-       * <code>.io.confluent.cloud.demo.domain.Device device = 1;</code>
+       * <code>.io.confluent.cloud.demo.domain.SensorReading.Device device = 1;</code>
        */
-      public Builder mergeDevice(io.confluent.cloud.demo.domain.SensorReadingImpl.Device value) {
+      public Builder mergeDevice(io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device value) {
         if (deviceBuilder_ == null) {
           if (device_ != null) {
             device_ =
-              io.confluent.cloud.demo.domain.SensorReadingImpl.Device.newBuilder(device_).mergeFrom(value).buildPartial();
+              io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device.newBuilder(device_).mergeFrom(value).buildPartial();
           } else {
             device_ = value;
           }
@@ -1245,7 +1245,7 @@ public final class SensorReadingImpl {
         return this;
       }
       /**
-       * <code>.io.confluent.cloud.demo.domain.Device device = 1;</code>
+       * <code>.io.confluent.cloud.demo.domain.SensorReading.Device device = 1;</code>
        */
       public Builder clearDevice() {
         if (deviceBuilder_ == null) {
@@ -1259,33 +1259,33 @@ public final class SensorReadingImpl {
         return this;
       }
       /**
-       * <code>.io.confluent.cloud.demo.domain.Device device = 1;</code>
+       * <code>.io.confluent.cloud.demo.domain.SensorReading.Device device = 1;</code>
        */
-      public io.confluent.cloud.demo.domain.SensorReadingImpl.Device.Builder getDeviceBuilder() {
+      public io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device.Builder getDeviceBuilder() {
         
         onChanged();
         return getDeviceFieldBuilder().getBuilder();
       }
       /**
-       * <code>.io.confluent.cloud.demo.domain.Device device = 1;</code>
+       * <code>.io.confluent.cloud.demo.domain.SensorReading.Device device = 1;</code>
        */
-      public io.confluent.cloud.demo.domain.SensorReadingImpl.DeviceOrBuilder getDeviceOrBuilder() {
+      public io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.DeviceOrBuilder getDeviceOrBuilder() {
         if (deviceBuilder_ != null) {
           return deviceBuilder_.getMessageOrBuilder();
         } else {
           return device_ == null ?
-              io.confluent.cloud.demo.domain.SensorReadingImpl.Device.getDefaultInstance() : device_;
+              io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device.getDefaultInstance() : device_;
         }
       }
       /**
-       * <code>.io.confluent.cloud.demo.domain.Device device = 1;</code>
+       * <code>.io.confluent.cloud.demo.domain.SensorReading.Device device = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.confluent.cloud.demo.domain.SensorReadingImpl.Device, io.confluent.cloud.demo.domain.SensorReadingImpl.Device.Builder, io.confluent.cloud.demo.domain.SensorReadingImpl.DeviceOrBuilder> 
+          io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device, io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device.Builder, io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.DeviceOrBuilder> 
           getDeviceFieldBuilder() {
         if (deviceBuilder_ == null) {
           deviceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.confluent.cloud.demo.domain.SensorReadingImpl.Device, io.confluent.cloud.demo.domain.SensorReadingImpl.Device.Builder, io.confluent.cloud.demo.domain.SensorReadingImpl.DeviceOrBuilder>(
+              io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device, io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.Device.Builder, io.confluent.cloud.demo.domain.SensorReadingImpl.SensorReading.DeviceOrBuilder>(
                   getDevice(),
                   getParentForChildren(),
                   isClean());
@@ -1407,15 +1407,15 @@ public final class SensorReadingImpl {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_io_confluent_cloud_demo_domain_Device_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_io_confluent_cloud_demo_domain_Device_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_io_confluent_cloud_demo_domain_SensorReading_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_io_confluent_cloud_demo_domain_SensorReading_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_io_confluent_cloud_demo_domain_SensorReading_Device_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_io_confluent_cloud_demo_domain_SensorReading_Device_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1426,28 +1426,29 @@ public final class SensorReadingImpl {
   static {
     java.lang.String[] descriptorData = {
       "\n\023sensorReading.proto\022\036io.confluent.clou" +
-      "d.demo.domain\"+\n\006Device\022\020\n\010deviceID\030\001 \001(" +
-      "\t\022\017\n\007enabled\030\002 \001(\010\"j\n\rSensorReading\0226\n\006d" +
-      "evice\030\001 \001(\0132&.io.confluent.cloud.demo.do" +
-      "main.Device\022\020\n\010dateTime\030\002 \001(\003\022\017\n\007reading" +
-      "\030\003 \001(\001B\023B\021SensorReadingImplb\006proto3"
+      "d.demo.domain\"\245\001\n\rSensorReading\022D\n\006devic" +
+      "e\030\001 \001(\01324.io.confluent.cloud.demo.domain" +
+      ".SensorReading.Device\022\020\n\010dateTime\030\002 \001(\003\022" +
+      "\017\n\007reading\030\003 \001(\001\032+\n\006Device\022\020\n\010deviceID\030\001" +
+      " \001(\t\022\017\n\007enabled\030\002 \001(\010B\023B\021SensorReadingIm" +
+      "plb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_io_confluent_cloud_demo_domain_Device_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_io_confluent_cloud_demo_domain_Device_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_io_confluent_cloud_demo_domain_Device_descriptor,
-        new java.lang.String[] { "DeviceID", "Enabled", });
     internal_static_io_confluent_cloud_demo_domain_SensorReading_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(0);
     internal_static_io_confluent_cloud_demo_domain_SensorReading_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_confluent_cloud_demo_domain_SensorReading_descriptor,
         new java.lang.String[] { "Device", "DateTime", "Reading", });
+    internal_static_io_confluent_cloud_demo_domain_SensorReading_Device_descriptor =
+      internal_static_io_confluent_cloud_demo_domain_SensorReading_descriptor.getNestedTypes().get(0);
+    internal_static_io_confluent_cloud_demo_domain_SensorReading_Device_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_io_confluent_cloud_demo_domain_SensorReading_Device_descriptor,
+        new java.lang.String[] { "DeviceID", "Enabled", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
