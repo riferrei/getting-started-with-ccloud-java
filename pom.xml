@@ -10,7 +10,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <kafka.client.version>2.5.0</kafka.client.version>
-    <protobuf.serializer>5.5.0</protobuf.serializer>
+    <confluent.platform.version>5.5.0</confluent.platform.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven.compiler.plugin>3.8.1</maven.compiler.plugin>
@@ -31,7 +31,7 @@
     <repository>
       <id>confluent</id>
       <name>Confluent</name>
-      <url>http://packages.confluent.io/maven/</url>
+      <url>https://packages.confluent.io/maven/</url>
     </repository>
   </repositories>
 
@@ -51,7 +51,7 @@
     <dependency>
       <groupId>io.confluent</groupId>
       <artifactId>kafka-protobuf-serializer</artifactId>
-      <version>${protobuf.serializer}</version>
+      <version>${confluent.platform.version}</version>
     </dependency>
   </dependencies>
 
@@ -91,6 +91,22 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>io.confluent</groupId>
+        <artifactId>kafka-schema-registry-maven-plugin</artifactId>
+        <version>${confluent.platform.version}</version>
+        <configuration>
+            <schemaRegistryUrls>
+                <param>${schema.registry.url}</param>
+            </schemaRegistryUrls>
+            <userInfoConfig>${schema.registry.basic.auth.user.info}</userInfoConfig>
+            <outputDirectory>schemas</outputDirectory>
+            <subjectPatterns>
+                <param>^SensorReading-(value)$</param>
+            </subjectPatterns>
+            <schemaExtension>.proto</schemaExtension>
+        </configuration>
+      </plugin>      
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
