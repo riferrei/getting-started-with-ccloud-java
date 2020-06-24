@@ -35,8 +35,8 @@ public class ConsumerApp {
             SensorReading.class.getName());
 
         // Set other standard properties for the Kafka consumer
-        configs.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
-        configs.setProperty(ConsumerConfig.GROUP_ID_CONFIG, ConsumerApp.class.getName());
+        configs.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest");
+        configs.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "java-consumer");
 
         try (KafkaConsumer<String, SensorReading> consumer = new KafkaConsumer<>(configs)) {
 
@@ -51,10 +51,10 @@ public class ConsumerApp {
                     SensorReading sensorReading = record.value();
                     Device device = sensorReading.getDevice();
                     StringBuilder sb = new StringBuilder();
-                    sb.append("deviceID.....: ").append(device.getDeviceID()).append("\n");
-                    sb.append("enabled......: ").append(device.getEnabled()).append("\n");
-                    sb.append("dateTime.....: ").append(sensorReading.getDateTime()).append("\n");
-                    sb.append("reading......: ").append(sensorReading.getReading()).append("\n");
+                    sb.append("SensorReading[device=").append(device.getDeviceID());
+                    sb.append(", dateTime=").append(sensorReading.getDateTime());
+                    sb.append(", reading=").append(sensorReading.getReading());
+                    sb.append("]\n");
                     System.out.println(sb.toString());
                 }
 
